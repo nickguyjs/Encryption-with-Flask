@@ -1,0 +1,31 @@
+cb {
+  background-color: black;
+}
+
+body {
+	text-align: center;
+	font-family: 'IBM Plex Sans', sans-serif;
+	background-color: black;
+	color: white;
+}
+
+div {
+  /* Figure out how to align this in center */
+  text-align: center;
+  width: 1300px;
+  background-color: coral;
+	color: white;
+  margin: 20px;
+}
+
+p {
+  color: white;
+  margin: 20px;
+}
+
+a {
+	color: blue;
+	-webkit-appearance: button;
+	-moz-appearance: button;
+	appearance: button;
+}

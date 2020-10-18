@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Rail Fence cipher</title>
+    <script src="/static/base.js"></script>
+    <link href="/static/base.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet"> 
+  </head>
+  <body>
+    <div>
+      <h1>This will encrypt your message using a Rail Fence cipher.</h1>
+      <p>
+        Input a message below!
+        <form method="POST" action="/railfence">
+          <input type="text" name="plaintext" placeholder="The British are coming!">
+          <input class="btn btn-primary" name="btn1" type="submit" value="Submit">
+        </form>
+        
+        <p>Encrypted Message: {{ enc_text }}</p> 
+        <form method="POST" action="/railfence">
+          <button name="btndecm" value="btndecm">Show Decrypted Message</button>
+        </form>
+        <p>Decrypted Message: {{ dec_text }}</p> 
+        <form method="POST" action="/railfence">
+          <button name="btn2" value="btn2">Show Number of Rails</button>
+        </form>
+        <p>Number of Rails: {{ num_rails }}</p> 
+      </p>
+    </div>
+
+    <div>
+      <h2>This section allows you to decrypt the encrypted message you created in the previous section.</h2>
+  
+      <h3>Press "Start" to create the rail fence.</h3>
+      <form method="POST" action="/railfence">
+        <button name="btnstart" value="btnstart">Start</button>
+      </form>
+      {% if showAnswerBox %}
+      <p>In order to do this, you will need to know what a cycle is. A cycle is the number of columns between the element in the first column and the element in the column right before it hits the top again. It can be determined using the formula below.</p>
+      <p>CYCLE = (Number of Rails * 2) - 2<p>
+      <p>See the image below. With this information, you should be able to solve a rail fence cipher.</p>
+      <img src="static/rfexplaination.PNG"/> <br>
+      {% endif %}
+      <thead>
+        {% for i in range(user_enc_rails): %}
+          <tr>
+            {% for i in range(user_enc_cols): %}
+              <td> <input type="text" id="txtName" maxlength="1" style="width: 10px"/> </td>
+            {% endfor %}
+          </tr>
+          <br>
+        {% endfor %}
+      </thead>
+      {% if showAnswerBox %}
+      <p> 
+        <form method="POST" action="/railfence">
+          Enter the text you decrypted in the rail fence above.<br>
+          <input type="text" id="txtName"/ placeholder="The British are coming!"><br>
+          <input class="btn btn-primary" name="submitans" type="submit" value="Submit">
+        </form>
+      </p>
+      {% endif %}
+    </div>
+
+    <div>
+      <h2>See if you can encrypt your message using rail fence.</h2>
+      <p>
+        <form method="POST" action="/railfence">
+          Enter the number of columns(the length of your text) you will need.<br>
+          <input type="number" min="1" name="usercols" placeholder="18"><br>
+          Enter the number of rows(rails) you will need.<br>
+          <input type="number" min="1" name="userrows" placeholder="3"><br>
+          <input class="btn btn-primary" name="rowsbutton" type="submit" value="Submit">
+        </form>
+      </p>
+      <p>Your cipher: {{ show_user_rows_cols }}</p>
+      <thead>
+        {% for i in range(user_rows): %}
+          <tr>
+            {% for i in range(user_cols): %}
+              <td> <input type="text" id="txtName" maxlength="1" style="width: 10px"/> </td>
+            {% endfor %}
+          </tr>
+          <br>
+        {% endfor %}
+      </thead>
+      {% if user_cols > 0 %}
+      <p> 
+        <form method="POST" action="/railfence">
+          Now you can type out the ciphertext.<br>
+          <input type="text" id="txtName"/ placeholder="The British are coming!"><br>
+          <input class="btn btn-primary" name="submitans" type="submit" value="Submit">
+        </form>
+      </p>
+      {% endif %}
+    </div>
+    <p>
+    <a href="/" style="position: fixed; bottom: 0; width:90%; text-align: center">Back to Main Page</a>
+    </p>
+    
+  </body>
+</html>

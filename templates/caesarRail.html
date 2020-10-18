@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Caesar-Rail Fence cipher</title>
+    <script src="/static/base.js"></script>
+    <link href="/static/base.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet"> 
+  </head>
+  <body>
+    <div>
+      <h1>This will encrypt your message using a Caesar-Rail Fence cipher.</h1>
+      <h2>This cipher first encrypts your message using a Caesar cipher,<br>
+      then again using a Rail Fence cipher.</h2>
+      <p>
+        Input a message below!
+        <form method="POST">
+          <input name="text" placeholder="ATTACK AT NINE">
+          <input type="submit">
+        </form>
+        <p>Encrypted Message: {{ enc_text }}</p> 
+        <p>Decrypted Message: {{ dec_text }}</p> 
+        
+      </p>
+      <p>
+      <a href="/" style="position: fixed; bottom: 0; width:90%; text-align: center">Back to Main Page</a>
+      </p>
+    </div>
+  </body>
+</html>
