@@ -2,18 +2,27 @@
 <html>
   <head>
     <title>Encryption!</title>
-    <script src="/static/base.js"></script>
-    <link href="/static/base.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/baseTwo.css" type="text/css"/>
   </head>
   <body>
-    <div>
-      <h1>This website is intended to encrypt messages.</h1>
-      <h2>Below are some ciphers you can check out.</h2>
-      <a href="/caesar">Caesar cipher</a>
-      <br><a href="/railfence">Rail Fence cipher</a>
-      <br><a href="/CaesarRail">Caesar-Rail Fence cipher</a>
-      <br><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Do you really want to click this?</a>
+    <div class="container">
+      <div class="page-header">
+        <h1>This website is intended to encrypt messages.</h1>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="jumbotron">
+            <h2>Below are some ciphers you can check out.</h2>
+            <a href="/caesar" class="btn btn-link" role="button">Caesar cipher</a>
+            <br><a href="/railfence" class="btn btn-link" role="button">Rail Fence cipher</a>
+            <br><a href="/rfdec" class="btn btn-link" role="button">Decrypt a Rail Fence cipher</a>
+            <br><a href="/CaesarRail" class="btn btn-link" role="button">Caesar-Rail Fence cipher</a>
+            <br><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn-link" role="button">Do you really want to click this?</a>
+            </div>
+          </div>
+      </div>
     </div>
   </body>
 </html>

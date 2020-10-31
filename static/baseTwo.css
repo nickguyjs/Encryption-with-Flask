@@ -1,0 +1,17 @@
+html, body {
+  background-color: black;
+}
+
+h1 {
+  color: white;
+}
+
+.jumbotron {
+  background-color: coral;
+  text-align: center;
+  padding: 10px;
+}
+
+.card, .btn, .form-control { 
+  border-radius: 0; 
+}

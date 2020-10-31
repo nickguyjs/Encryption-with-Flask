@@ -1,8 +1,11 @@
 from random import randint
 
-def encryptRail(plaintext):
+def encryptRail(plaintext, numberRails):
   """Encrypts the plaintext using a Rail Fence cipher."""
-  numRails = 2 if len(plaintext) < 10 else (randint(3,5) if len(plaintext) < 20 else randint(5, 10))
+  if numberRails == None:
+    numRails = 2 if len(plaintext) < 10 else (randint(3,5) if len(plaintext) < 20 else randint(5, 10))
+  else:
+    numRails = numberRails
     # sets numRails to random number based on length of plaintext
   rf = [[chr(1000)] * len(plaintext) for i in range(numRails)] # creates a matrix length of the text and height based on numRails
 
@@ -27,7 +30,8 @@ def encryptRail(plaintext):
   for row in rf:
     print(*row) # prints out the RF array to console
 
-  return enc, numRails # returns the ciphertext and key
+  
+  return enc, numRails, rf # returns the ciphertext and key
 
 def decryptRail(ciphertext, numRails):
   """Decrypts the ciphertext using a Rail Fence cipher."""
