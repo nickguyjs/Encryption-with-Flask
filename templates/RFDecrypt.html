@@ -44,9 +44,11 @@
               {% endif %}
             </thead>
             </form>
-            {% if user_cols_for_rand > 0 %}
-              Is it right? <br>
-              {{ correctness }}
+            {% if correctness == "WRONG" %}
+              <h3 style="color: red;"> {{ correctness }} </h3>
+            {% endif %}
+            {% if correctness == "ALL GOOD" %}
+              <h3 style="color: green;"> {{ correctness }} </h3>
             {% endif %}
         </div>
       </div>
